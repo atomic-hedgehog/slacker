@@ -14,7 +14,3 @@ proc post_message*(message: string, channel: string) =
   payload.add("}")
   echo payload
   discard postContent(hook_url, body=payload)
-#echo payload
-#echo encode_url(payload)
-#echo postContent(hook_url, body=payload)
-

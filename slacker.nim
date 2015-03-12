@@ -7,12 +7,12 @@ routes:
    let channel = request.params["channel_name"]
    let user = request.params["user_name"]
    let roll_text = request.params["text"]
-   let message = user & " rolls " & roll_text & ":\\n" & roll(roll_text)
 
    if validate(roll_text):
+     let message = user & " rolls " & roll_text & ":\\n" & roll(roll_text)
      post_message(message, channel)
-     status = Http200
+     resp("")
    else:
-     status = Http400
+     resp(Http400, "The die roll string was malformed")
 
 runForever()
